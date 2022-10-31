@@ -10,7 +10,7 @@ export const StyledTypography = styled(Typography)`
   }
 `;
 
-export const ImageItem = styled(ImageListItem)`
+export const StyledImageListItem = styled(ImageListItem)`
   && {
     transition: 0.2s;
   }

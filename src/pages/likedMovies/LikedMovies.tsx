@@ -4,8 +4,8 @@ import { RootState } from "../../store";
 import { removeLikedMovie } from "../../store/movieList";
 import FavoriteSharpIcon from "@material-ui/icons/FavoriteSharp";
 import { MovieType } from "../../types/movie";
-import { BASE_URL } from "../../services/Movies";
-import { StyledTypography, ImageItem } from "./styled";
+import { IMAGE_BASE_URL } from "../../services/Movies";
+import { StyledTypography, StyledImageListItem } from "./styled";
 import { StyledMovieListContainer } from "../../components/MovieList/styled";
 import { StyledBox } from "../homePage/styled";
 
@@ -32,9 +32,9 @@ const LikedMovies = () => {
             gap={20}
           >
             {likedMovies.map((movie: MovieType) => (
-              <ImageItem key={movie.id}>
+              <StyledImageListItem key={movie.id}>
                 <img
-                  src={`${BASE_URL}${movie.poster_path}?w=248&fit=crop&auto=format`}
+                  src={`${IMAGE_BASE_URL}${movie.poster_path}?w=248&fit=crop&auto=format`}
                   alt={movie.title}
                   loading="lazy"
                 />
@@ -53,7 +53,7 @@ const LikedMovies = () => {
                     </IconButton>
                   }
                 />
-              </ImageItem>
+              </StyledImageListItem>
             ))}
           </ImageList>
         </StyledBox>

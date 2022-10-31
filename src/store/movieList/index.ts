@@ -12,7 +12,7 @@ const initialState: MovieListState = {
 };
 
 export const counterSlice = createSlice({
-  name: "counter",
+  name: "movies",
   initialState,
   reducers: {
     setMovieList: (state, action: PayloadAction<MovieType[]>) => {

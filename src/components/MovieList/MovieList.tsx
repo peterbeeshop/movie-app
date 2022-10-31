@@ -9,9 +9,9 @@ import {
 } from "@material-ui/core";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import FavoriteSharpIcon from "@material-ui/icons/FavoriteSharp";
-import { BASE_URL } from "../../services/Movies";
+import { IMAGE_BASE_URL } from "../../services/Movies";
 import { StyledTypography } from "../../pages/likedMovies/styled";
-import { ImageItem, StyledMovieListContainer } from "./styled";
+import { StyledImageListItem, StyledMovieListContainer } from "./styled";
 import { MovieType } from "../../types/movie";
 
 interface MovieListProps {
@@ -57,9 +57,9 @@ const MovieList = ({ loading, error }: MovieListProps) => {
           gap={45}
         >
           {listOfMovies.map((movie) => (
-            <ImageItem key={movie.id}>
+            <StyledImageListItem key={movie.id}>
               <img
-                src={`${BASE_URL}${movie.poster_path}?w=248&fit=crop&auto=format`}
+                src={`${IMAGE_BASE_URL}${movie.poster_path}?w=248&fit=crop&auto=format`}
                 alt={movie.title}
                 loading="lazy"
               />
@@ -80,7 +80,7 @@ const MovieList = ({ loading, error }: MovieListProps) => {
                   </IconButton>
                 }
               />
-            </ImageItem>
+            </StyledImageListItem>
           ))}
         </ImageList>
       </>
